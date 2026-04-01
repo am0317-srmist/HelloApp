@@ -2,22 +2,19 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        StringBuilder names = new StringBuilder();
+        StringBuilder nameBuilder = new StringBuilder();
 
-        // Check if no arguments are provided
         if (args.length == 0) {
-            names.append("World");
-        } else {
-            // Enhanced for loop to iterate through all names
-            for (String name : args) {
-                names.append(name).append(", ");
-            }
-
-            // Remove trailing comma and space
-            names.setLength(names.length() - 2);
+            System.out.println("Hello, World!");
+            return;
         }
 
-        // Print final greeting
-        System.out.println("Hello, " + names.toString() + "!");
+        for (String name : args) {
+            nameBuilder.append(name).append(", ");
+        }
+
+        String names = nameBuilder.substring(0, nameBuilder.length() - 2);
+
+        System.out.println("Hello, " + names + "!");
     }
 }
